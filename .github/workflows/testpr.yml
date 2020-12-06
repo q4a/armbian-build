@@ -1,6 +1,6 @@
 name: test pull request
 # This workflow is triggered on pushes to the repository.
-on: [pull_request]
+on: [push, pull_request]
 
 jobs:
   shellcheck:
