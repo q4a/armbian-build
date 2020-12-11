@@ -4,10 +4,10 @@ on: [push, pull_request]
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
     - uses: actions/checkout@v2
       with:
         fetch-depth: 0
     - name: Build
-      run: ./compile.sh BOARD="tinkerboard" BRANCH="current" KERNEL_ONLY="yes" KERNEL_CONFIGURE="no" BUILD_DESKTOP="no"
+      run: sudo ./compile.sh BOARD="tinkerboard" BRANCH="current" KERNEL_ONLY="yes" KERNEL_CONFIGURE="no" BUILD_DESKTOP="no"
