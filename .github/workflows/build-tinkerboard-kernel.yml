@@ -1,0 +1,13 @@
+name: Build ASUS Tinker Board Kernel
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+    - name: Build
+      run: ./compile.sh BOARD="tinkerboard" BRANCH="current" KERNEL_ONLY="yes" KERNEL_CONFIGURE="no" BUILD_DESKTOP="no"
