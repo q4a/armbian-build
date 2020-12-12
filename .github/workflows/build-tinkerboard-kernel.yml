@@ -11,3 +11,8 @@ jobs:
         fetch-depth: 0
     - name: Build
       run: sudo ./compile.sh BOARD="tinkerboard" BRANCH="current" KERNEL_ONLY="yes" KERNEL_CONFIGURE="no" BUILD_DESKTOP="no"
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: output-debs
+        path: output/debs/
