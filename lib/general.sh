@@ -197,6 +197,8 @@ create_sources_list()
 improved_git()
 {
 
+echo "$@"
+
 	local realgit=$(which git)
 	local retries=3
 	local delay=10
